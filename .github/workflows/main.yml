@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Markdown to PDF
-        uses: valtyr/pandoc-action@v0.1-alpha  
+        uses: valtyr/pandoc-action@v0.1-alpha
+        with:
+          args: "-f markdown -t pdf https://github.com/Sae86/hello-github-actions.wiki.git -o test.pdf"
