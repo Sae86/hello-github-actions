@@ -9,11 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "Lorem ipsum" > lorem_1.md  # create two example files
+          echo "Lorem ipsum" > lorem_1.md
           echo "dolor sit amet" > lorem_2.md
-          mkdir output  # create output dir
-          # this will also include README.md
-          echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
+          mkdir output
       - uses: docker://pandoc/latex:2.9
         with:
           args: --output=output/result.pdf ${{ env.FILELIST }}
