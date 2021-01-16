@@ -9,3 +9,6 @@ jobs:
       - uses: docker://pandoc/core:2.9
         with:
           args: "-f markdown -t pdf https://github.com/Sae86/hello-github-actions.wiki.git -o test.pdf"
+          
+      - name: Markdown to PDF
+        uses: valtyr/pandoc-action@v0.1-alpha  
