@@ -1,15 +1,11 @@
-name: A workflow for my Hello World file
+name: Markdown to PDF
 
 on: push
 
 jobs:
-
-  build:
-  
-    name: Hello world action
-    runs-on: ubuntu-latest
+  convert_via_pandoc:
+    runs-on: ubuntu-18.04
     steps:
-      -  uses: actions/checkout@v1
-      -  uses: ./action-a
-         with:
-            MY_NAME: "Mona"
+      - uses: docker://pandoc/core:2.9
+        with:
+          args: "-f html -t markdown https://github.com/Sae86/hello-github-actions.wiki.git -o test.pdf"
