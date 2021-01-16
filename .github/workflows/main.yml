@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: docker://pandoc/core:2.9
         with:
-          args: "-f html -t markdown https://github.com/Sae86/hello-github-actions.wiki.git -o test.pdf"
+          args: "-f markdown -t pdf https://github.com/Sae86/hello-github-actions.wiki.git -o test.pdf"
